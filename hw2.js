@@ -8,12 +8,31 @@ Write a function called dice; it should randomize an integer number between 1 an
 
 console.log("\n--------------------EXCERCISE 1--------------------\n")
 
+function dice() {
+    return Math.floor(Math.random()*6) + 1;
+}
+console.log(dice())
+
+
+/*
+function dice() {
+    return Math.floor(Math.random()*7) - 1;
+}
+console.log(dice())
+*/
+
+/*
 function dice(min, max) {
     return (Math.floor(Math.random() * (max - min +1)) + min);
 }
+
+console.log(dice())
+
 let spin = dice(1, 6);
 
 console.log(spin)
+console.log(dice())
+*/
 
 
 /* EXERCISE 2
@@ -24,11 +43,11 @@ Write a function called whoIsBigger which receives 2 numbers as parameters and r
 
 console.log("\n--------------------EXCERCISE 2--------------------\n")
 
-function whoIsBigger(num1,num2){
-    if (num1>num2){
-        return num1;
+function whoIsBigger(number1,number2) {
+    if (number1>number2) {
+        return number1;
     } else {
-        return num2
+        return number2
     }
 }
 
@@ -36,6 +55,21 @@ console.log(whoIsBigger(2,4))
 console.log(whoIsBigger(100202,10020))
 console.log(whoIsBigger(-100, -99))
 console.log(whoIsBigger(-9, 5))
+
+/*
+function whoIsBigger(num1,num2) {
+    if (1stNum1>2ndNum){
+        return 1stNum;
+    } else {
+        return 2ndNum
+    }
+}
+
+console.log(whoIsBigger(2,4))
+console.log(whoIsBigger(100202,10020))
+console.log(whoIsBigger(-100, -99))
+console.log(whoIsBigger(-9, 5))
+*/
 
 /*
 function whoIsBigger(numbers) {
@@ -61,7 +95,7 @@ Ex.: splitMe("I love coding") => returns ["I", "Love", "Coding"]
 
 console.log("\n--------------------EXCERCISE 3--------------------\n")
 
-function splitMe(string){
+function splitMe(string) {
     let splitArray = string.split(" ");
     return splitArray;
 }
@@ -88,8 +122,8 @@ If the boolean value is true it should return the string without the first lette
 
 console.log("\n--------------------EXCERCISE 4--------------------\n")
 
-function deleteOne(string, bool){
-    if(bool){
+function deleteOne(string, boolean){
+    if(boolean === true){
         return string.substring(1)
     } else {
         return string.substring(0,string.length-1)
@@ -99,9 +133,10 @@ function deleteOne(string, bool){
     console.log(deleteOne("False stringg", false))
     console.log(deleteOne("TTrue string", true))
     console.log(deleteOne("Hello, World!", true))
-
+    console.log(deleteOne("Hello, World!", false))
 
 // function deleteOne()
+
 
 /* EXERCISE 5
 
@@ -113,17 +148,34 @@ Ex.: onlyLetters("I have 4 dogs") => returns "I have dogs"
 
 console.log("\n--------------------EXCERCISE 5--------------------\n")
 
+function onlyLetters(string) {
+ if (typeof string === "string") {
+    return string.replaceAll(/[0-9]/gi, "")
+ } else {return "Not a string"}
+}
+
+let str1 = "a1 b2 c3 d4 e5 f6";
+console.log(onlyLetters(str1));
+
+let str2 = "1234567890abc987654321";
+console.log(onlyLetters(str2));
+
+let str3 = "This is an example and a test of 1. a string with numbers removed";
+console.log(onlyLetters(str3));
+
+/*
 let str = 'a1 b2 c3';
 let noNumbers = str.replace(/[0-9]/g, '')
 console.log(noNumbers);
-
-// figure out how to put this into a function
+figure out how to put this into a function
+*/
 
 /*
-function onlyLetter(string) {
+function onlyLetters(string) {
     let 
 }
 */
+
 
 /* EXERCISE 6
 
@@ -144,6 +196,8 @@ console.log(isThisAnEmail("07801472949"))
 console.log(isThisAnEmail("false@false"))
 console.log(isThisAnEmail("true@true.co.uk"))
 console.log(isThisAnEmail("ben.mcmahon@hotmail.fr"))
+
+// seems to only track the @ symbol as fasle@flase is returning true so needs to be improved to check for a .com or .co.uk but for now I think sufficient for this question.
 
 // const regexExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/gi;
 // /^[a-zA-Z]+[a-zA-Z0-9_.]+@[a-zA-Z.]+[a-zA-Z]$/
@@ -193,6 +247,44 @@ values: [3, 3, 4]
 
 console.log("\n--------------------EXCERCISE 8--------------------\n")
 
+/* function rollTheDices(n) {
+    let tempArray[]
+    letTempNumber;
+    let total=0;
+    for i=0; i<n; i++) {
+        tempNumber = dice();
+        tempArray.push(tempNumber);
+        total += tempNumber;
+    }
+    let 
+}
+*/
+
+function rollTheDices(n){
+    console.log(n)
+    let sum = 0
+    let diceArray = []
+    for (i=0; i<n; i++) {
+        result = dice()
+        diceArray.push(result)
+        sum = sum + result
+    }
+    console.log(sum)
+    let tempObject = {sum : sum, values:diceArray}
+    return tempObject;
+}
+
+
+let n = 100
+
+myObject = rollTheDices(n)
+console.log(myObject.sum)
+console.log(myObject.values)
+
+// create rollthedice function
+// print statment number that given to the statement (parameter)
+// write function to print out the parameter
+// take integer as input, integer as a parameter
 // function rollTheDices(number){ }
 
 
@@ -224,6 +316,7 @@ console.log("Total number of days passed <br>"
 
 // datedif function
 
+
 /* EXERCISE 10
 
 Write a function called isTodayMyBirthday which should return true if today’s your birthday, false otherwise.
@@ -233,7 +326,21 @@ Write a function called isTodayMyBirthday which should return true if today’s 
 console.log("\n--------------------EXCERCISE 10--------------------\n")
 
 
+function isTodayMyBirthday(myBirthday) {
+    let todayDate = new Date ("2022-08-10");
+    if (todayDate.getMonth()===myBirthday.getMonth()&&todayDate.getDate()===myBirthday.getDate()) {
+        // &&todayDate.getYear()===myBirthday.getYear
+    return true;
+} else {
+    return false;
+}
+}
 
+myBirthdayDate = new Date ("1990-08-10");
+console.log(isTodayMyBirthday(myBirthdayDate));
+
+// getDay
+// getMonth
+// remove year
 // if today (date) === 10/08/xxxx return true
 // else return false
-

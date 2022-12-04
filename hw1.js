@@ -31,6 +31,7 @@ let test = "Ben";
 
 console.log(test)
 
+
 /* EXERCISE B
 
 Create a variable called sum and assign to it the result of the sum between the numbers 10 and 20.
@@ -43,8 +44,8 @@ let num1 = 10;
 let num2 = 20;
 
 let sum = num1+num2;
-
 console.log(sum)
+
 
 /* EXERCISE C
 
@@ -91,6 +92,7 @@ console.log("\n--------------------EXCERCISE E--------------------\n")
 delete me.age
 console.log(me)
 
+
 /* EXERCISE F
 
 Write a piece of code for programmatically adding to the me object you defined before an array called skills, containing the programming languages you know right now.
@@ -101,6 +103,8 @@ console.log("\n--------------------EXCERCISE F--------------------\n")
 
 me.skills = ['Scratch', 'C', 'Python']
 console.log(me.skills)
+console.log(me)
+
 
 /*
 //Array to push
@@ -154,6 +158,7 @@ console.log("\n--------------------EXCERCISE G--------------------\n")
 
 me.skills.pop();
 console.log(me.skills)
+
 
 /* skills.splice(0, -1)
 
