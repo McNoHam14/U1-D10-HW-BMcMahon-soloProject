@@ -390,6 +390,20 @@ Write a function called onlyInThisMillennium which returns only the movies produ
 
 console.log("\n--------------------EXCERCISE 15--------------------\n")
 
+function onlyInThisMillenium() {
+    let moviesArray=[];
+    for (i=0; i<movies.length; i++) {
+        if(parseInt(movies[i].Year)>=2000){
+        moviesArray.push(movies[i].Title);
+    }
+} return moviesArray;
+}
+
+console.log(onlyInThisMillenium())
+
+// parseint 2000 and above
+// for loop through array
+// push array movies title
 
 
 /* EXERCISE 16
@@ -400,6 +414,35 @@ Write a function called getMovieById which receives an id as a parameter and ret
 
 console.log("\n--------------------EXCERCISE 16--------------------\n")
 
+function getMovieById(array, id) {
+    for (let i =0; i<movies.length; i++) {
+        if (movies[i].imdbID === id) {
+            return movies[i].Title;
+        }
+    }
+    return "not an id"
+}
+
+console.log(getMovieById("tt4154796"))
+
+
+/*
+{
+
+    Title: "Avengers: Endgame",
+
+    Year: "2019",
+
+    imdbID: "tt4154796",
+
+    Type: "movie",
+
+    Poster:
+
+    "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
+
+    }
+*/
 
 
 /* EXERCISE 17
@@ -410,13 +453,21 @@ Write a function called sumAllTheYears which returns the sum of all the years in
 
 console.log("\n--------------------EXCERCISE 17--------------------\n")
 
+
+function sumAllTheYears (){
+let total = 0;
+for (let i = 0; i, i<movies.length; i++) {
+    total += parseInt(movies[i].Year);
+}
+return total;
+}
+
+console.log(sumAllTheYears())
+
 // array called years
 // length of the movies
 // parse int
 // for loop
-
-
-
 
 
 /* EXERCISE 18
@@ -427,6 +478,18 @@ Write a function called searchByTitle which receives a string as a parameter and
 
 console.log("\n--------------------EXCERCISE 18--------------------\n")
 
+
+function searchByTitle(string) {
+    let moviesArray = [];
+    for (i=0; i<movies.length; i++) {
+        if (movies[i].Title.toLowerCase().includes(string.toLowerCase())) {
+            moviesArray.push(movies[i].Title);
+        }
+    }
+    return moviesArray
+}
+
+console.log(searchByTitle("Aveng"))
 
 
 /* EXERCISE 19
@@ -450,3 +513,5 @@ Write a function called "removeIndex" which receives a number as a parameter and
 */
 
 console.log("\n--------------------EXCERCISE 20--------------------\n")
+
+
